@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hmqr"
+version = "0.1.0"
+description = "Image-level calibration for selective mitigation of attribute and relation hallucinations in VLMs"
+requires-python = ">=3.10"
+readme = "README.md"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["hmqr*"]
+
+[tool.setuptools.package-data]
+hmqr = ["**/*.txt", "**/*.json"]

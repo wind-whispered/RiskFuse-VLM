@@ -1,0 +1,41 @@
+# Core DL / VLM
+#
+# IMPORTANT -- transformers upper bound.
+# transformers v5 requires torch >= 2.5. On a host whose torch is older (AutoDL
+# images commonly ship torch 2.3.0+cu121) an unpinned install silently disables
+# the torch backend:
+#     "Disabling PyTorch because PyTorch >= 2.5 is required but found 2.3.0"
+# and then no model can be loaded at all. The bound below keeps transformers in
+# the range that supports LLaVA-1.5/1.6 + InstructBLIP and works with torch 2.3.
+# If you do have torch >= 2.5 you may raise it, but re-test the Qwen-VL wrapper.
+torch>=2.1.0
+torchvision>=0.16.0
+transformers==4.49.0
+accelerate>=0.30.0
+sentencepiece>=0.1.99
+einops>=0.7.0
+tiktoken>=0.6.0
+transformers_stream_generator>=0.0.4
+# Vision tools
+open_clip_torch>=2.24.0
+# Grounding DINO (HF implementation lives in transformers>=4.40; groundingdino-py optional fallback)
+# Data / numerics
+numpy>=1.24.0
+scipy>=1.10.0
+scikit-learn>=1.3.0
+pandas>=2.0.0
+pillow>=10.0.0
+# Retrieval / metrics
+rank-bm25>=0.2.2
+nltk>=3.8.1
+rouge-score>=0.1.2
+pycocotools>=2.0.7
+# Plotting (SCI style; seaborn intentionally NOT used)
+matplotlib>=3.7.0
+# Download / IO / utils
+huggingface_hub>=0.23.0
+requests>=2.31.0
+tqdm>=4.66.0
+pyyaml>=6.0
+openpyxl==3.1.5
+gitpython>=3.1.40
