@@ -1,0 +1,11 @@
+{"image_id": "AMBER_195", "warmup": true, "decode_seconds": 0.0058860960125457495, "generation_seconds": 1.5088596059940755, "full_native_seconds": 0.48632498100050725, "visual_verifier_seconds": 0.1784669019980356}
+{"image_id": "AMBER_728", "warmup": false, "decode_seconds": 0.002330303017515689, "generation_seconds": 1.2225993929896504, "full_native_seconds": 0.2902425419888459, "visual_verifier_seconds": 0.16462089100969024}
+{"image_id": "AMBER_336", "warmup": false, "decode_seconds": 0.007515278004575521, "generation_seconds": 2.2824477489921264, "full_native_seconds": 0.27944040202419274, "visual_verifier_seconds": 0.14348294801311567}
+{"image_id": "AMBER_713", "warmup": false, "decode_seconds": 0.0036277580074965954, "generation_seconds": 1.7770708029856905, "full_native_seconds": 0.26889429401489906, "visual_verifier_seconds": 0.14671301099588163}
+{"image_id": "AMBER_802", "warmup": false, "decode_seconds": 0.005530632013687864, "generation_seconds": 1.6181641409930307, "full_native_seconds": 0.28631413998664357, "visual_verifier_seconds": 0.159980934986379}
+{"image_id": "AMBER_193", "warmup": false, "decode_seconds": 0.003671621991088614, "generation_seconds": 2.04149955502362, "full_native_seconds": 0.2770348339981865, "visual_verifier_seconds": 0.16312842798652127}
+{"image_id": "AMBER_605", "warmup": false, "decode_seconds": 0.003669090016046539, "generation_seconds": 1.782679375988664, "full_native_seconds": 0.28699176700320095, "visual_verifier_seconds": 0.1673073529964313}
+{"image_id": "AMBER_258", "warmup": false, "decode_seconds": 0.0026418810011819005, "generation_seconds": 2.481103044003248, "full_native_seconds": 0.2819442580221221, "visual_verifier_seconds": 0.16356822798843496}
+{"image_id": "AMBER_934", "warmup": false, "decode_seconds": 0.16504941001767293, "generation_seconds": 1.5730838059971575, "full_native_seconds": 1.1072699950018432, "visual_verifier_seconds": 0.718515190994367}
+{"image_id": "AMBER_354", "warmup": false, "decode_seconds": 0.0027746699925046414, "generation_seconds": 2.3782090219901875, "full_native_seconds": 0.26441887000692077, "visual_verifier_seconds": 0.1464715859910939}
+{"image_id": "AMBER_674", "warmup": false, "decode_seconds": 0.0023702019825577736, "generation_seconds": 2.177667094016215, "full_native_seconds": 0.2689185959752649, "visual_verifier_seconds": 0.164742124004988}

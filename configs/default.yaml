@@ -1,0 +1,229 @@
+seed: 42
+device: cuda
+dtype: float16
+local_execution:
+  enabled: false
+  offload_directory: data/models/local_cpu_offload
+  checkpoint_storage_max_shard_bytes: 1073741824
+  model_loading:
+    device_map: auto
+    max_memory:
+      0: 18GiB
+      cpu: 8GiB
+    offload_state_dict: true
+  model_loading_by_backbone:
+    qwenvl:
+      max_memory:
+        0: 20GiB
+        cpu: 8GiB
+hf_endpoint: https://hf-mirror.com
+hf_home: data/models/hf
+paths:
+  datasets: data/datasets
+  model_cache: data/models/hf/hub
+  model_pointers: data/models/pointers
+  tool_cache: data/tools/hf_cache
+  tool_pointers: data/tools/pointers
+  tool_resources: data/tools/resources
+  processed: data/processed
+  vg_index: data/indexes/visual_genome
+  results: results
+  figures: results/figures
+  tables: results/tables
+  logs: results/logs
+  review: results/review
+backbones:
+  order:
+  - llava15
+  - llava16
+  - instructblip
+  - qwenvl
+  llava15:
+    hf_id: llava-hf/llava-1.5-7b-hf
+    family: llava
+  llava16:
+    hf_id: llava-hf/llava-v1.6-vicuna-7b-hf
+    family: llava_next
+  instructblip:
+    hf_id: Salesforce/instructblip-vicuna-7b
+    family: instructblip
+  qwenvl:
+    hf_id: Qwen/Qwen-VL-Chat
+    family: qwenvl
+tools:
+  clip_hf_id: openai/clip-vit-large-patch14-336
+  grounding_dino_hf_id: IDEA-Research/grounding-dino-base
+  grounding_dino_box_threshold: 0.25
+  grounding_dino_text_threshold: 0.25
+datasets:
+  detect:
+  - amber_attr
+  - amber_rel
+  - rbench
+  - mmrel
+  quality:
+  - chair500
+  subset_limit: null
+  amber:
+    root: data/datasets/amber
+  rbench:
+    root: data/datasets/rbench
+  mmrel:
+    root: data/datasets/mmrel
+    image_roots:
+    - data/datasets/visual_genome/full_images
+  coco:
+    root: data/datasets/coco2014
+    chair_num_images: 500
+  visual_genome:
+    root: data/datasets/visual_genome
+    images_root: data/datasets/visual_genome/full_images
+    pixel_audit_roots:
+    - data/datasets/visual_genome/full_images
+generation:
+  max_new_tokens: 256
+  caption_prompt: Describe this image in detail.
+cp:
+  sampling_unit: image_one_claim
+  alpha_default: 0.1
+  alpha_grid:
+  - 0.05
+  - 0.1
+  - 0.2
+  calib_cp_ratio: 0.25
+  calib_revision_ratio: 0.25
+  test_ratio: 0.5
+  min_hallucinations_per_group: 5
+  cv_folds: 5
+residual_gate:
+  target_incorrect_intervention_rate: 0.05
+  min_residual_images: 20
+  min_calibration_claims: 10
+  min_correct_claims_for_risk: 5
+revision_evaluation:
+  max_images_per_group_split: 500
+intervention:
+  discriminative_action: target_retraction
+  generative_action: target_retraction
+revision_generation:
+  max_calls_per_job: 650
+quality_transfer:
+  supported_relation_kinds:
+  - contact
+  policy: selective_revision
+internal_confidence:
+  max_images_per_group_split: 250
+semantic_entropy:
+  n_samples: 10
+  temperature: 0.7
+  top_p: 0.95
+  max_return_sequences_per_generate:
+    llava15: 1
+    llava16: 1
+    instructblip: 1
+    qwenvl: 1
+rq1_uncertainty:
+  max_images_per_label_split: 50
+mechanism:
+  probe_max_images_per_stratum: 150
+  attention_max_images_per_stratum: 250
+rag:
+  topk: 3
+  bm25_weight: 0.5
+  clip_weight: 0.5
+  require_complete_identity_audit: true
+reviewer_revision:
+  manuscript_source: null
+  alpha_grid:
+  - 0.05
+  - 0.1
+  - 0.2
+  delta_grid:
+  - 0.01
+  - 0.025
+  - 0.05
+  - 0.1
+  calibration_fractions:
+  - 0.5
+  - 0.75
+  - 1.0
+  ltt_failure_probability: 0.05
+  threshold_grid_size: 50
+  annotation_images_per_backbone: 50
+  annotation_mode: ai_assisted_human_review
+  annotation_required_reviewers: 1
+  annotation_bootstrap_repetitions: 1000
+  assisted_review_workbook: work/annotation/returned_human_review.xlsx
+  assisted_review_records: reproduction_data/extraction/confirmed_human_review_records.jsonl
+  assisted_review_tasks: reproduction_data/extraction/tasks.jsonl
+  probe_development_fraction: 0.2
+  latency_images_per_dataset: 10
+  latency_warmup_images_per_dataset: 1
+  identity_map: null
+  pixel_identity_audit: true
+  pixel_hash_workers: 8
+  pixel_phash_radius: 4
+relation_direction_vectors:
+  above:
+  - 0.0
+  - -1.0
+  below:
+  - 0.0
+  - 1.0
+  under:
+  - 0.0
+  - 1.0
+  on_top_of:
+  - 0.0
+  - -1.0
+  left_of:
+  - -1.0
+  - 0.0
+  right_of:
+  - 1.0
+  - 0.0
+  in_front_of:
+  - 0.0
+  - 1.0
+  behind:
+  - 0.0
+  - -1.0
+relation_contact_keywords:
+- true
+- in
+- holding
+- hold
+- riding
+- ride
+- wearing
+- wear
+- carrying
+- carry
+- attached
+- touching
+- touch
+- inside
+- covering
+- cover
+- eating
+- eat
+release_data:
+  supplement:
+    snapshot_archive: reproduction_data/supplement_raw.zip
+    snapshot_sha256: 3dfdb632b0b56abed18a0a4419c27436de13ec73a8203fec86d79e7f8931dd63
+    workspace: work/supplement_case_study
+    overrides:
+      backbones:
+        order:
+        - llava15
+      datasets:
+        detect:
+        - amber_attr
+        - amber_rel
+        quality: []
+      revision_evaluation:
+        max_images_per_group_split: 100
+      paths:
+        processed: work/supplement_case_study/data/processed
+        vg_index: work/supplement_case_study/data/indexes/visual_genome
+        review: work/supplement_case_study/results/review

@@ -1,0 +1,4 @@
+probe_schema_version,backbone,class,peak_layer,peak_auroc
+2,instructblip,object,13,0.6426444444444445
+2,instructblip,attribute,12,0.9480888888888889
+2,instructblip,relation,18,0.8293333333333333

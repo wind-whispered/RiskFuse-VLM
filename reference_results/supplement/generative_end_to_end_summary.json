@@ -1,0 +1,30 @@
+{
+  "status": "complete",
+  "n_real_images": 50,
+  "n_extracted_attr_rel_claims": 175,
+  "backbone": "llava15",
+  "scope": "frozen AMBER source policy applied to 50 prespecified already-generated audited captions; no visual ground-truth labels invented",
+  "readability_measure": "same-backbone image-conditioned caption NLL; not independent human fluency or visual correctness",
+  "methods": {
+    "Full": {
+      "n_captions_changed": 0,
+      "n_predicates_retracted": 0,
+      "non_target_preservation": true,
+      "mean_nll_difference": 0.0,
+      "image_bootstrap_95ci": [
+        0.0,
+        0.0
+      ]
+    },
+    "Visual verifier": {
+      "n_captions_changed": 0,
+      "n_predicates_retracted": 0,
+      "non_target_preservation": true,
+      "mean_nll_difference": 0.0,
+      "image_bootstrap_95ci": [
+        0.0,
+        0.0
+      ]
+    }
+  }
+}

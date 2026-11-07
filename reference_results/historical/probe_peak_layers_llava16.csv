@@ -1,0 +1,4 @@
+probe_schema_version,backbone,class,peak_layer,peak_auroc
+2,llava16,object,7,0.7964888888888887
+2,llava16,attribute,16,0.9549111111111112
+2,llava16,relation,16,0.8424666666666667

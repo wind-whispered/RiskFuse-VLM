@@ -1,0 +1,6 @@
+variant,cp,residual,gate,intervene,target_hallucination_removal_rate,incorrect_intervention_rate,net_hallucination_reduction,output_coverage
+Full,True,True,True,True,0.033272283272283196,0.015625,0.00549450549450545,0.1625
+No residual gate,True,True,False,True,0.713980463980464,0.5414994266055047,-0.14758852258852262,0.75
+Fixed threshold (no CP),False,True,True,True,0.1527777777777778,0.0078125,0.1388888888888889,0.7325
+No residualisation,True,False,True,True,0.02197802197802195,0.0,0.02197802197802195,0.15
+Abstain all,True,True,False,False,0.0,0.0,0.0,0.14

@@ -1,0 +1,15 @@
+{
+  "status": "complete",
+  "backbone": "llava15",
+  "dataset": "amber_attr",
+  "n_images": 10,
+  "warmup_images": 1,
+  "hardware": "NVIDIA GeForce RTX 4090",
+  "scope": "one native claim per image; corpus priors cached; free-form extraction and model load excluded; image decode separate; fresh visual evidence for both policies",
+  "means_seconds": {
+    "decode_seconds": 0.019918084604432805,
+    "generation_seconds": 1.933452398297959,
+    "full_native_seconds": 0.36114696980221195,
+    "visual_verifier_seconds": 0.2138530694966903
+  }
+}

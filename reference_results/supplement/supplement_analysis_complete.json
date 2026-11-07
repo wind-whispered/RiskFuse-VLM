@@ -1,0 +1,84 @@
+{
+  "status": "complete",
+  "scope": "LLaVA-1.5 supplementary AMBER case study; historical four-backbone experiments retained separately",
+  "n_prespecified_rows": 900,
+  "n_metrics": 1296,
+  "n_primary_cells": 36,
+  "groups": [
+    {
+      "backbone": "llava15",
+      "dataset": "amber_attr",
+      "group": "attr|count",
+      "status": "analysed",
+      "counts": {
+        "calib_cp": 100,
+        "calib_revision": 100,
+        "test": 100
+      }
+    },
+    {
+      "backbone": "llava15",
+      "dataset": "amber_attr",
+      "group": "attr|state",
+      "status": "analysed",
+      "counts": {
+        "calib_cp": 100,
+        "calib_revision": 100,
+        "test": 100
+      }
+    },
+    {
+      "backbone": "llava15",
+      "dataset": "amber_rel",
+      "group": "rel|contact",
+      "status": "analysed",
+      "counts": {
+        "calib_cp": 100,
+        "calib_revision": 100,
+        "test": 98
+      }
+    }
+  ],
+  "probe": [
+    {
+      "dataset": "amber_attr",
+      "group": "attr|count",
+      "recipe": "fixed final layer; predicate if aligned, otherwise aligned entities",
+      "n_train": 100,
+      "n_scored": 300
+    },
+    {
+      "dataset": "amber_attr",
+      "group": "attr|state",
+      "recipe": "fixed final layer; predicate if aligned, otherwise aligned entities",
+      "n_train": 100,
+      "n_scored": 300
+    },
+    {
+      "dataset": "amber_rel",
+      "group": "rel|contact",
+      "recipe": "fixed final layer; predicate if aligned, otherwise aligned entities",
+      "n_train": 100,
+      "n_scored": 300
+    }
+  ],
+  "full_iir_exceedances": 1,
+  "full_supported_cells": 3,
+  "ltt_no_action_cells": 3,
+  "ltt_supported_cells": 3,
+  "methods": [
+    "Abstain all",
+    "Fixed threshold",
+    "Full",
+    "Grounding-entropy fusion",
+    "LTT residual gate",
+    "Linear probe",
+    "No VG prior",
+    "No gate",
+    "Predictive entropy (verification)",
+    "Raw grounding",
+    "Self verification",
+    "Visual verification retraction (simplified post-hoc)"
+  ],
+  "input_protocol_sha256": "72f44ca69f901b16daeb21c920b0f164d3d6aea9b6d37997c4dbc372a42d4ee7"
+}

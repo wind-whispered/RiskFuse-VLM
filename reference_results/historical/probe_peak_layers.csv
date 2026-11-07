@@ -1,0 +1,13 @@
+probe_schema_version,backbone,class,peak_layer,peak_auroc
+2,llava15,object,9,0.983921568627451
+2,llava15,attribute,16,0.9344
+2,llava15,relation,17,0.8357333333333334
+2,llava16,object,7,0.7964888888888887
+2,llava16,attribute,16,0.9549111111111112
+2,llava16,relation,16,0.8424666666666667
+2,instructblip,object,13,0.6426444444444445
+2,instructblip,attribute,12,0.9480888888888888
+2,instructblip,relation,18,0.8293333333333333
+2,qwenvl,object,9,0.9780444444444444
+2,qwenvl,attribute,18,0.9702444444444444
+2,qwenvl,relation,16,0.8783333333333334

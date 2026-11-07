@@ -1,0 +1,24 @@
+{
+  "n_generated_claims": 175,
+  "n_finite_raw_grounding": 173,
+  "n_parsed_self_verifications": 175,
+  "route_counts": {
+    "global": 130,
+    "containment": 30,
+    "attr": 12,
+    "direction": 3
+  },
+  "methods": {
+    "Full": {
+      "unsupported_source_group|abstain": 163,
+      "non_unique_sentence_or_target|abstain": 4,
+      "frozen_source_policy|keep": 2,
+      "frozen_source_policy|abstain": 6
+    },
+    "Visual verifier": {
+      "unsupported_source_group|abstain": 163,
+      "non_unique_sentence_or_target|abstain": 10,
+      "frozen_source_policy|keep": 2
+    }
+  }
+}

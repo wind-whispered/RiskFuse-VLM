@@ -1,0 +1,67 @@
+{
+  "scope": "supplementary_one_backbone_case_study_not_full_study_rerun",
+  "backbone": "llava15",
+  "selection": "score_and_label_blind_hash_one_claim_per_image_per_routed_family_and_split",
+  "cap_images_per_family_split": 100,
+  "seed": 42,
+  "groups": [
+    {
+      "dataset": "amber_attr",
+      "group": "attr|count",
+      "split": "calib_cp",
+      "n_images": 100
+    },
+    {
+      "dataset": "amber_attr",
+      "group": "attr|count",
+      "split": "calib_revision",
+      "n_images": 100
+    },
+    {
+      "dataset": "amber_attr",
+      "group": "attr|count",
+      "split": "test",
+      "n_images": 100
+    },
+    {
+      "dataset": "amber_attr",
+      "group": "attr|state",
+      "split": "calib_cp",
+      "n_images": 100
+    },
+    {
+      "dataset": "amber_attr",
+      "group": "attr|state",
+      "split": "calib_revision",
+      "n_images": 100
+    },
+    {
+      "dataset": "amber_attr",
+      "group": "attr|state",
+      "split": "test",
+      "n_images": 100
+    },
+    {
+      "dataset": "amber_rel",
+      "group": "rel|contact",
+      "split": "calib_cp",
+      "n_images": 100
+    },
+    {
+      "dataset": "amber_rel",
+      "group": "rel|contact",
+      "split": "calib_revision",
+      "n_images": 100
+    },
+    {
+      "dataset": "amber_rel",
+      "group": "rel|contact",
+      "split": "test",
+      "n_images": 100
+    }
+  ],
+  "input_sha256": {
+    "amber_attr": "84b5c8b1fb3a5977b226238a76f6af917fa1a576cc313bdb0d4add36d1d96db4",
+    "amber_rel": "6e8459ef6b28035d39b4692ad8d36ed43e1ccaca4c7b09bffbdcab0654c22282"
+  }
+}
